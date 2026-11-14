@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>更新日志 — MD Toolkit</title>
+<meta name="description" content="MD Toolkit 完整更新日志，最新在上。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Crect y='7.25' width='32' height='24.75'/%3E%3C/clipPath%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%230969DA'/%3E%3Cg clip-path='url(%23c)'%3E%3Cpath d='M7.75 24 V7.25 L16 15.75 L24.25 7.25 V24' fill='none' stroke='%23000' stroke-width='3.25'/%3E%3C/g%3E%3Ccircle cx='16' cy='15.75' r='2.875' fill='%237ee2b8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html#top"><span class="mark"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><defs><clipPath id="mtMarkClip"><rect y="7.25" width="32" height="24.75"/></clipPath></defs><rect width="32" height="32" rx="7" fill="#0969DA"/><g clip-path="url(#mtMarkClip)"><path d="M7.75 24 V7.25 L16 15.75 L24.25 7.25 V24" fill="none" stroke="#000" stroke-width="3.25"/></g><circle cx="16" cy="15.75" r="2.875" fill="#7ee2b8"/></svg></span>MD Toolkit</a>
+    <nav class="links" aria-label="页面导航">
+      <a data-sec href="index.html#pain">痛点</a>
+      <a data-sec href="index.html#features">核心能力</a>
+      <a data-sec href="index.html#shots">实图</a>
+      <a data-sec href="index.html#why">为什么选它</a>
+      <a data-sec href="index.html#more">全部特性</a>
+      <a href="changelog.html" aria-current="page">更新日志</a>
+      <a data-min href="index.html#install">安装</a>
+      <a href="index.html#reward">赞赏</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section id="updates">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p>新主题与排版技巧首发于公众号「顾明同学」。</p>
+    </div>
+    <!-- upd:begin 由 scripts/sync-site-updates.js 从 CHANGELOG.md 生成,别手改 -->
+    <ul class="upd reveal">
+      <li><span class="v">0.4.3</span><div><b>打字、拖拽、连线这些日常动作跟手了。</b><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>双击图形改一个词，不再整句被选中重打</li><li>拖导图节点时，被拖的那枝跟着手走</li><li>方向键连按后重做，回到挪完的位置</li><li>笔刷锁定连续勾画，收笔不再跳回选择</li><li>按住 Ctrl 只点一下不再多出隐藏副本，拖动才复制</li><li>连线落回起点或太短，起点闪一下红环，不再无声</li><li>查找与替换不再每敲一个字就跳页面，跑偏的命中也会露出来</li><li>块手柄随滚动走，滚出视野或指针离开正文后照常收起</li><li>输入框不再吞掉中文候选词</li></ul></div><div class="upd-group"><span class="upd-tag misc">优化</span><ul class="upd-items"><li>快捷键速查卡补上方向键微调、Ctrl 拖动副本、Shift 加选与导图建树键</li></ul></div></div></li>
+      <li><span class="v">0.4.2</span><div><b>画板手势实时呈现，进行中的操作可以随时取消。</b><div class="upd-group"><span class="upd-tag add">新增</span><ul class="upd-items"><li>拖动、缩放、旋转时元素跟着指针走，连着它的线同步改道</li><li>缩放时显示当前尺寸</li><li>连线预览与最终连线走同一条路径</li><li>框选扫过的元素实时高亮</li><li>多选后可整体缩放</li><li>按住 Ctrl 拖动元素可复制一份</li><li>画板可缩到 10%，也可放到 800%</li></ul></div><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>拖动、缩放、旋转、框选、拉线都能按 Esc 取消</li><li>Shift 框选改为切换选中状态</li><li>按住 Shift 的方向键按网格间距移动</li><li>从工具条拖出元素或手绘到画布边缘时，画布自动滚动</li></ul></div></div></li>
+      <li><span class="v">0.4.1</span><div><b>修掉正文输入与画板上的几处问题。</b><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>空文档第一行的标题、列表、引用、成对符号和块手柄都能用了</li><li>长文字的连线说明不再被选框和导出画面裁掉</li><li>旋转后的图形也能接住拖过来的连线</li><li>换模板整板时不再沿用上一块板的网格与吸附设置</li><li>磁盘上的外部改动与本地保存撞车时不再被静默覆盖</li></ul></div></div></li>
+      <li><span class="v">0.4.0</span><div><b>画板可以存自己的模板，连线多了曲线一档，板上的字能全文搜到，整板可导出矢量 PDF。</b><div class="upd-group"><span class="upd-tag add">新增</span><ul class="upd-items"><li>画板能存模板，模板库单列「我的模板」，可删可换</li><li>连线可走曲线，标签能沿线拖动摆放</li><li>画板支持全文搜索，命中高亮，逐个跳转</li><li>整板可导出矢量 PDF</li><li>图形、便签、文字可从左侧直接拖进画板，落进泳道自动归道</li></ul></div><div class="upd-group"><span class="upd-tag misc">优化</span><ul class="upd-items"><li>选中动作条不再横罩一排元素，浮层自动挑不挡内容的方向展开</li><li>泳道里可以直接点放图形，不用先放外面再挪进去</li></ul></div><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>所见即所得模式下，列表项里粘贴文本不再掉到列表外</li></ul></div></div></li>
+      <li><span class="v">0.3.3</span><div><b>画板里能单独调一个节点的样子，插入表格改成拖动网格，图片的工具条也能换图、改说明和加链接。</b><div class="upd-group"><span class="upd-tag add">新增</span><ul class="upd-items"><li>导图节点单独换底色、字号和形状，复制时样式跟着走，动作条一键恢复默认</li><li>连线端点能绑到导图里的具体节点，节点移动、折叠、改挂后线跟着走</li><li>插入表格改成拖动网格选行列，按所选规模一次生成</li><li>图片悬浮工具条能换一张图、改说明文字、加超链接</li><li>图片可以靠左、居中或靠右摆放</li></ul></div><div class="upd-group"><span class="upd-tag misc">优化</span><ul class="upd-items"><li>格式化文档时标题前留空行，脚注按首次引用的顺序排列，中西文之间补空格</li><li>格式化不再改掉表格列的居中与居右</li></ul></div><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>画板模板不再整板替换，可以直接插进当前画板</li><li>折叠的导图分支照样进大纲导出，不再整枝丢失</li><li>在导图节点里打字时，方向键只动光标，不再挪动节点选择</li><li>导图节点的复制、剪切、删除只作用于这个节点，绑在它子孙上的关系线一起清掉</li><li>复制清单：行首符号按层取 • ○ ▪，有序列表保留原序号，缩进不再用 Tab</li></ul></div></div></li>
+      <li><span class="v">0.3.2</span><div><b>修掉一批丢输入、写错原文或点了没反应的小毛病。</b><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>取消勾选任务、插入代码块、刷新预览：输入不再丢，也不写错原文</li><li>编辑/预览菜单的勾选跟着当前标签走</li><li>没有源码编辑器时插入类命令给提示，命令面板也能搜到「插入脚注」</li><li>公众号密钥验不过不覆盖旧值；导出失败不留临时页，存封面缺图有提示</li><li>网页导入去掉重复标题，超限立即中止</li></ul></div></div></li>
+      <li><span class="v">0.3.1</span><div>画板工具条、动作条与形状面板的图标放大，选中框、手柄与连接点统一为深青；工具条按模板、选择、绘制、视图分组，默认选中「选择」；动作条的描边色与线宽分开显示，排列与位置收进同一浮层；选中图片后可以直接换一张；结构选择器只留结构图，不加字；模板库入口与卡片操作简化；危险操作悬停时给出红色反馈；浅色画板的选中、悬停与线宽预览恢复可见；动作条与工具条在元素很大或窗口很矮时都不挡操作；画板不再误报磁盘内容已变化，放弃本地修改要再点一次确认；文档中夹带的代码不再在公众号排版面板中执行；表格列的居中与居右在预览、导出与复制时都保留</div></li>
+      <li><span class="v">0.3.0</span><div><b>块能拖着换顺序，图片拖进正文就存好。</b></div></li>
+      <li><span class="v">0.2.9</span><div><b>Word、网页等来源的内容，粘进来就是干净的结构。</b></div></li>
+      <li><span class="v">0.2.8</span><div><b>画板开箱即用的模板补充。</b></div></li>
+      <li><span class="v">0.2.7</span><div><b>双击 .md 直接打开所见即所得编辑器。</b></div></li>
+      <li><span class="v">0.2.6</span><div><b>怕丢的好文拉回本地存成 .md，一篇稿子一键出长图。</b></div></li>
+      <li><span class="v">0.2.5</span><div><b>画板能套模板、泳道能改，公众号稿能直接进草稿箱。</b></div></li>
+      <li><span class="v">0.2.4</span><div><b>手写稿粘进公众号不再掉版式。</b></div></li>
+      <li><span class="v">0.2.3</span><div><b>正文也能导成网页，导出收进一个菜单。</b></div></li>
+      <li><span class="v">0.2.2</span><div><b>图标换新，画板两处细节修正。</b></div></li>
+      <li><span class="v">0.2.1</span><div><b>正文里的链接现在点得开，画板图形能摆到任意角度。</b></div></li>
+      <li><span class="v">0.2.0</span><div><b>画板图形库、泳道与写作链路集中升级，默认白板转暖。</b></div></li>
+      <li><span class="v">0.1.8</span><div><b>画板浮层交互重排，深色主题适配，图标与误触集中收口。</b></div></li>
+      <li><span class="v">0.1.7</span><div>浮层视觉统一，全套适配 VS Code 深色主题</div></li>
+      <li><span class="v">0.1.6</span><div>泳道支持任意位置插道与拖拽重排；右键新增「清理空元素」一键执行；对齐时引导线显示间距数值；同类操作的连续微调并作一步撤销</div></li>
+      <li><span class="v">0.1.5</span><div>新元素自动沿用上一个同类元素的样式；导图节点标记上浮到节点功能条；写字只走「文本」工具，改名走 F2 或双击；只读板拒绝全部编辑入口；空改名、空编辑不再白占撤销</div></li>
+      <li><span class="v">0.1.4</span><div>预览目录支持逐级折叠，展开状态按文档记忆；画板连线可钉折点，悬停图形即出连接方向；元素可挂超链接，角标提示且按住 Ctrl 打开；选中对象旁贴着功能条，工具条与右键菜单补齐快捷键提示；支持全选，多选形状可等宽等高统一与整块上下移层；形状支持圆角与投影，拖角按住 Shift 等比缩放；导图节点直接打字即改名，文字支持字号、粗斜下划线与换行；切窗口或键盘状态被打断导致的拖不动与快捷键误触发修复；编辑器外松手不再让元素粘在鼠标上；保存失败明确提示且改动不丢；导图分支错挂、标记排版、深层节点无框等显示问题修复；选中与高亮按所点对象，不再圈住整图</div></li>
+      <li><span class="v">0.1.3</span><div>小节一键生成思维导图，导图可导出大纲回文档；连线箭头可选无、终点、起点或双向；所见即所得打字不再闪屏、输入法不再被打断；源码模式打字不再被旁边面板抢焦点</div></li>
+      <li><span class="v">0.1.2</span><div>思维导图支持概要括号与节点标记；代码块编辑光标跳动、拖选中断修复；连线拖画一步成型；样式面板去掉无效控件，数值支持连续微调</div></li>
+      <li><span class="v">0.1.1</span><div>最低支持 VS Code 1.84；预览页拦截远端脚本与危险链接；切走或关闭面板不再丢改动；格式化不动代码块；保存冲突明确提示，失败不毁旧文件；查找替换、目录插入、深色板配色等杂项修复</div></li>
+      <li><span class="v">0.1.0</span><div><b>本版本的重心是自研画板。流程图、思维导图、便签、文字、手绘笔迹和图片在同一块板上画完，保存后文档内即时显示，双击图片回来继续编辑。能力清单见 [项目主页](https://md-toolkit-2ye7qc83yft.qoder.zone)。</b></div></li>
+      <li><span class="v">0.0.41</span><div>Markdown 记号保存后原样保留，切换编辑器不再串文件；选区包裹与部分选中的格式处理修复；导出 PDF 失败不再误报成功；标题折叠纳入撤销，查找替换只作用于可见内容；预览与导出拦截脚本与危险链接</div></li>
+      <li><span class="v">0.0.40</span><div>成对符号自动补全；选中文字字体颜色；导出 PDF 支持 Windows</div></li>
+      <li><span class="v">0.0.39</span><div>标题一键收起该节，纯显隐不动文档；选区浮动格式工具条；代码块语法高亮与一键复制</div></li>
+      <li><span class="v">0.0.38</span><div>粘贴表格数据自动转 Markdown 表格；图片灯箱看大图</div></li>
+      <li><span class="v">0.0.37</span><div>空列表项回车即跳出列表，光标落点正确</div></li>
+      <li><span class="v">0.0.36</span><div>链接可就地改标题；插入图片改为真实选图落盘；提示卡片补齐五种；斜杠插入块后占位文字自动选中、光标落点补齐</div></li>
+      <li><span class="v">0.0.35</span><div>所见即所得查找/替换；表格支持 Tab 跳格、末格自动增行与单元格插删行列；目录侧栏可拖宽；目录过长不再与字数统计叠字；编辑态说明条</div></li>
+      <li><span class="v">0.0.34</span><div>撤销/重做栈，块级操作均可一步回退；行首符号快捷转块、成对符号包裹、列表升降级；粘贴 Markdown 源码直接渲染；中文输入法组合期不再被快捷键误触发</div></li>
+      <li><span class="v">0.0.33</span><div>列表回车自动续行；选中文字粘 URL 直接成链接；字数统计 / 阅读时长；表情短代码补全</div></li>
+      <li><span class="v">0.0.32</span><div>公式渲染、Mermaid 图表、高亮 / 上下标；斜杠菜单补齐公式图表类条目</div></li>
+      <li><span class="v">0.0.31</span><div>提示卡片渲染与光标进出修复</div></li>
+      <li><span class="v">0.0.30</span><div>预览 / 所见即所得 / 外部同步三条渲染路径提速</div></li>
+      <li><span class="v">0.0.29</span><div>扩展详情页大幅精简</div></li>
+      <li><span class="v">0.0.28</span><div>斜杠菜单全部块统一光标出口；标题回车续写正文</div></li>
+      <li><span class="v">0.0.27</span><div>跳出代码块的路径补齐，不再堆空行</div></li>
+      <li><span class="v">0.0.26</span><div>去掉编辑态焦点框</div></li>
+      <li><span class="v">0.0.25</span><div>代码块跳出快捷键；提示卡片配色渲染；链接可点开可改；任务框直接勾选</div></li>
+      <li><span class="v">0.0.24</span><div>图片粘贴自动落盘并写相对路径；图片悬停缩放；新增插入图片命令与相关配置</div></li>
+      <li><span class="v">0.0.23</span><div>修复粘贴到表格软件时多级列表层级丢失</div></li>
+      <li><span class="v">0.0.22</span><div>完善扩展详情页</div></li>
+      <li><span class="v">0.0.21</span><div>复制升级为所见即所得样式；本地图片自动内嵌；颜色保证白底可读</div></li>
+      <li><span class="v">0.0.20</span><div>粘贴到 Excel/WPS 表格时层级保持</div></li>
+      <li><span class="v">0.0.19</span><div>复制后粘到 Word、飞书、语雀保留格式；代码块内输入斜杠不误弹菜单</div></li>
+      <li><span class="v">0.0.18</span><div>斜杠菜单按上下文给出表格/列表/标题操作</div></li>
+      <li><span class="v">0.0.17</span><div>新增导出 PDF</div></li>
+      <li><span class="v">0.0.16</span><div>代码块支持 17 种语言，悬停可切换</div></li>
+      <li><span class="v">0.0.15</span><div>新增提示卡片、折叠块、日期块与块级手柄</div></li>
+      <li><span class="v">0.0.14</span><div>输入斜杠唤出浮层，17 种基础块</div></li>
+      <li><span class="v">0.0.13</span><div>清理冗余配置与样式；发布者变更为 gmsy</div></li>
+      <li><span class="v">0.0.12</span><div>「打开方式」新增只读预览入口</div></li>
+      <li><span class="v">0.0.11</span><div>移除右键冗余的「打开预览」</div></li>
+      <li><span class="v">0.0.10</span><div>「打开方式」下拉支持所见即所得 / 只读预览</div></li>
+      <li><span class="v">0.0.9</span><div>视图模式改为右上角下拉菜单</div></li>
+      <li><span class="v">0.0.8</span><div>预览面板内可直接编辑，改动自动保存进文档并支持撤销</div></li>
+    </ul>
+    <!-- upd:end -->
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 MD Toolkit · gmsy</span>
+    <div class="links">
+      <a href="https://marketplace.visualstudio.com/items?itemName=gmsy.md-toolkit" target="_blank" rel="noopener">VS Code Marketplace</a>
+      <a href="https://gitee.com/selfeasy/vscode-md-toolkit/issues" target="_blank" rel="noopener">问题反馈</a>
+      <a href="index.html#reward">赞赏支持</a>
+      <a href="index.html#top">回到顶部 ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }, { threshold: 0, rootMargin: '0px 0px -8%' });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+</script>
+<script src="marketplace.js"></script>
+</body>
+</html>

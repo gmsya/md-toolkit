@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gmsya.github.io/md-toolkit/sitemap.xml

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Toolkit — 把 VS Code 变成顺手的 Markdown 编辑器</title>
+<meta name="description" content="MD Toolkit：VS Code 的 Markdown 增强扩展。不用一串插件拼一个能用的编辑器——所见即所得编辑且存下仍是标准 .md、斜杠菜单、自研画板、整篇网页存回 .md、一键导出 PDF、网页与长图、复制到 Word / 飞书 / 语雀仍是原生列表。免费使用，完全离线。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Crect y='7.25' width='32' height='24.75'/%3E%3C/clipPath%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%230969DA'/%3E%3Cg clip-path='url(%23c)'%3E%3Cpath d='M7.75 24 V7.25 L16 15.75 L24.25 7.25 V24' fill='none' stroke='%23000' stroke-width='3.25'/%3E%3C/g%3E%3Ccircle cx='16' cy='15.75' r='2.875' fill='%237ee2b8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="MD Toolkit 回到顶部"><span class="mark"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><defs><clipPath id="mtMarkClip"><rect y="7.25" width="32" height="24.75"/></clipPath></defs><rect width="32" height="32" rx="7" fill="#0969DA"/><g clip-path="url(#mtMarkClip)"><path d="M7.75 24 V7.25 L16 15.75 L24.25 7.25 V24" fill="none" stroke="#000" stroke-width="3.25"/></g><circle cx="16" cy="15.75" r="2.875" fill="#7ee2b8"/></svg></span><span class="word">MD Toolkit</span></a>
+    <nav class="links" aria-label="页面导航">
+      <a data-sec href="#pain">痛点</a>
+      <a data-sec href="#features">核心能力</a>
+      <a data-sec href="#shots">实图</a>
+      <a data-sec href="#why">为什么选它</a>
+      <a data-sec href="#more">全部特性</a>
+      <a href="changelog.html">更新日志</a>
+      <a data-min href="#install">安装</a>
+      <a href="#reward">赞赏</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tagline">免费使用 · 完全离线 · 持续更新</span>
+      <h1>把 VS Code 变成<br>顺手的 <em>Markdown 编辑器</em></h1>
+      <p class="sub">所见即所得编辑、斜杠菜单、自研画板、整篇网页存回 .md、一键导出 PDF、网页与长图、复制跟预览一个样——写文档不再在源码和预览之间来回横跳。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://marketplace.visualstudio.com/items?itemName=gmsy.md-toolkit" target="_blank" rel="noopener">在 VS Code 中安装 ↗</a>
+        <a class="btn btn-ghost" href="#features">看看它能做什么</a>
+      </div>
+      <div class="hero-meta">
+        <span>存下仍是标准 .md</span>
+        <span>零外部依赖</span>
+        <span>中文输入法友好</span>
+      </div>
+    </div>
+
+    <div class="editor reveal">
+      <div class="chrome">
+        <span class="dot" style="background:#ff5f57"></span>
+        <span class="dot" style="background:#febc2e"></span>
+        <span class="dot" style="background:#28c840"></span>
+        <span class="file">notes/weekly.md</span>
+        <span class="tabs" role="group" aria-label="切换视图">
+          <button type="button" data-view="src" aria-pressed="false">源码</button>
+          <button type="button" data-view="wysiwyg" aria-pressed="true">所见即所得</button>
+          <button type="button" data-view="preview" aria-pressed="false">预览</button>
+        </span>
+      </div>
+      <div class="body">
+        <div class="view" data-view="src">
+<pre class="src"><span class="m">##</span> <span class="h">本周计划</span>
+
+<span class="c">&gt; [!NOTE]</span>
+<span class="c">&gt;</span> 💡 提示卡片 · 直接渲染，存下原样还原
+
+<span class="m">- [ ]</span> 把画板导图结构补齐
+<span class="m">- [ ]</span> 导出 PDF 的书签树回归
+<span class="m">- [x]</span> 斜杠菜单接上 /画板</pre>
+          <p class="kbd-line">标准 Markdown · 换任何编辑器都照样能打开</p>
+        </div>
+        <div class="view on" data-view="wysiwyg">
+          <h3>本周计划</h3>
+          <div class="note">💡 提示卡片 · <code style="font-family:var(--mono);font-size:12px">&gt; [!NOTE]</code> 直接渲染，存下原样还原</div>
+          <div class="slash">
+            <div class="q"><b>/</b>画<span class="caret"></span></div>
+            <ul>
+              <li class="hot"><span class="ico">▣</span>画板 — 流程图 · 思维导图 · 便签<small>Block</small></li>
+              <li><span class="ico">≡</span>无序列表<small>Block</small></li>
+              <li><span class="ico">1.</span>有序列表<small>Block</small></li>
+              <li><span class="ico">▦</span>表格（3×3）<small>Block</small></li>
+            </ul>
+          </div>
+          <p class="kbd-line"><kbd>Ctrl</kbd> + <kbd>B</kbd> 加粗 · <kbd>Ctrl</kbd> + <kbd>F</kbd> 查找替换 · <kbd>Tab</kbd> 表格跳格</p>
+        </div>
+        <div class="view" data-view="preview">
+          <h3>本周计划</h3>
+          <div class="note">💡 提示卡片 · 直接渲染，存下原样还原</div>
+          <ul class="doc">
+            <li><i>○</i>把画板导图结构补齐</li>
+            <li><i>○</i>导出 PDF 的书签树回归</li>
+            <li><i class="ck">◉</i><span style="opacity:.62;text-decoration:line-through">斜杠菜单接上 /画板</span></li>
+          </ul>
+          <p class="kbd-line">只读预览 · 切回「所见即所得」继续写</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Pain Points</div>
+      <h2>这些瞬间，写过文档的人都懂</h2>
+      <p>Markdown 的问题是它太朴素——所有麻烦都得写字的人自己扛。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain reveal">
+        <h3>闭眼写，睁眼验</h3>
+        <p>符号敲下去看不见效果，加粗有没有闭合、表格有没有断列，全靠切预览确认。</p>
+        <div class="fail">预览与编辑两个世界，来回横跳</div>
+      </div>
+      <div class="pain reveal">
+        <h3>表格靠手对齐</h3>
+        <p>竖线一格一格对，单元格里的竖线还得转义；改一个字整行列对齐全乱。</p>
+        <div class="fail">10 列的表，没人愿意手调</div>
+      </div>
+      <div class="pain reveal">
+        <h3>贴一张图的链式动作</h3>
+        <p>截图 → 存文件 → 起名 → 挪进目录 → 写相对路径 → 刷新看渲染。</p>
+        <div class="fail">比打字本身还费劲</div>
+      </div>
+      <div class="pain reveal">
+        <h3>发出去就掉格式</h3>
+        <p>粘给同事的 Word / 飞书 / 语雀，标题、表格、代码块的样式碎了一地。</p>
+        <div class="fail">要么重排，要么截图发</div>
+      </div>
+      <div class="pain reveal">
+        <h3>长文档没有侧栏</h3>
+        <p>需求文档几十页，交给别人只能通读——没有书签树，也没有分级目录。</p>
+        <div class="fail">导出 PDF 也只是一沓纸</div>
+      </div>
+      <div class="pain reveal">
+        <h3>图是外来户</h3>
+        <p>流程图、思维导图只能外链画图网站画完截图插回来，改一次线就得走一遍全流程。</p>
+        <div class="fail">文档里的图，画不进文档</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Core Features</div>
+      <h2>八个理由，换掉你的 Markdown 工作流</h2>
+      <p>上面每一条痛点，都对应到这里的某个能力。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/><path d="M17 15l4 4m0-4l-4 4" /></svg></div>
+        <h3>所见即所得，源码不失身</h3>
+        <p>源码 / 所见即所得 / 只读预览三视图随时切换，<b>编辑自动存进 .md</b>。敲 <kbd>#</kbd><kbd>空格</kbd> 变标题，块手柄拖拽排序，所有操作一步可撤销。</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M9 3l-2 18M17 3l-2 18M4 9h16M4 15h16"/></svg></div>
+        <h3>斜杠菜单</h3>
+        <p><b>24 种基础块</b>输入即得：表格、代码块、提示卡片、折叠块、日期、脚注……支持上下文操作（表格加行加列、列表互转）、输入过滤、最近使用。</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 3v18M12 9h4m-4 4h6"/></svg></div>
+        <h3>自研画板</h3>
+        <p>文档里 <b>/画板</b> 拖拽成图：流程图、思维导图、泳道、便签同板共存。思维导图 <b>12 档结构</b>，含做因果分析的鱼骨图，小节可一键长成导图，导图能倒回大纲，连线自动绕障。整板可出图为 PNG、矢量 PDF 或 SVG，保存后文档内即时显示，双击回来接着画。左侧 <b>模板库</b> 备着十套成品画板，换模板整板替换一步撤销。</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M6 9V4h12v5M6 13h12v7H6zM9 16h6"/></svg></div>
+        <h3>一键导出 PDF、网页与长图</h3>
+        <p>A4 版式，<b>标题自动生成侧边栏书签树</b>，长文档翻阅不愁。公式、图表、代码块高亮原样进 PDF。也能导成<b>带目录的单文件网页</b>，公式与图表一并写进这一个文件，发给谁都是打开就能看。要发朋友圈、小红书这类只吃图的地方，整篇还能出成<b>一张长图</b>，或<b>按内容切成多张</b>——刀口只落在段落之间，不会把一段文字或一张图劈开。</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M12 3v11m0 0l-4-4m4 4l4-4"/><path d="M4 17v3h16v-3"/></svg></div>
+        <h3>怕丢的网页，拉回本地存成 .md</h3>
+        <p>命令面板贴一个网址，整篇抓下来存进当前目录：<b>图片落到 image/</b>、代码块保住原来的语言、标题层级不塌。书签会死、链接会 404，<b>存下来的这一份不会</b>——全文搜索搜得到，笔记库里链得过去。只请求那一个网址，不经任何第三方中转。</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg></div>
+        <h3>复制跟预览一个样</h3>
+        <p>清单按层带 <b>• ○ ▪</b>、有序列表序号照旧；粘到 <b>Word / WPS / 飞书 / 语雀</b> 是原生列表，粘到 Excel 缩进不丢。跨工具协作不再需要重排版。</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M5 4h14v11H5z"/><path d="M9 19h6M12 15v4"/><path d="M8 8h8M8 11h5"/></svg></div>
+        <h3>公众号排版台</h3>
+        <p>手写稿粘进公众号不再掉版式：六套主题、字号行距可调、电脑与手机两档预览就是发布后的样子。标题、作者、摘要的<b>字数上限当场量给你看</b>，配好公众号凭据还能一键<b>存进草稿箱</b>，同一篇再存覆盖那一份。</p>
+      </div>
+      <div class="card reveal">
+        <div class="glyph"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M8 15l3-4 3 2 4-6"/></svg></div>
+        <h3>公式与图表全支持</h3>
+        <p>KaTeX 本地渲染行内/块级公式，<b>点击退回 LaTeX 就地改</b>；mermaid 代码块预览即成流程图，切回编辑仍是源码。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shots">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">In Action</div>
+      <h2>不看插画，看真图</h2>
+      <p>下面四张都截自扩展在 VS Code 里的实际界面。</p>
+    </div>
+    <figure class="shot reveal">
+      <figcaption>所见即所得编辑 · 左侧目录点击跳转</figcaption>
+      <img src="assets/shot-editor.png" width="1320" height="849" loading="lazy"
+           alt="MD Toolkit 编辑界面：左侧目录大纲高亮当前小节，正文有标题、提示卡片、列表和带边框表格，右上角是源码、编辑按钮，底部状态栏右侧显示页宽切换，左下角常驻字数统计">
+    </figure>
+    <div class="shots-grid">
+      <figure class="shot reveal">
+        <figcaption>画板 · 思维导图</figcaption>
+        <img src="assets/shot-board-mindmap.png" width="2400" height="1544" loading="lazy"
+             alt="VS Code 里的画板窗口：左侧竖排工具条第一项是模板库，中心主题「产品发布计划」向两侧展开研发、运营、上线前分支，曲线连线">
+      </figure>
+      <figure class="shot reveal">
+        <figcaption>画板 · 流程图与泳道同板共存</figcaption>
+        <img src="assets/shot-board-flow.png" width="2400" height="1544" loading="lazy"
+             alt="VS Code 里同一块画板：上方是产品发布思维导图，右上是产品/研发泳道，下方是需求评审流程图，判断框带是/否标签，云朵形表示外部依赖">
+      </figure>
+    </div>
+    <figure class="shot reveal shot-wide">
+      <figcaption>公众号排版台 · 六套主题、发布前读数、一键存草稿与存贴图</figcaption>
+      <img src="assets/shot-wechat-panel.png" width="2400" height="1544" loading="lazy"
+           alt="公众号排版面板：顶栏是电脑/手机预览、字号、行距、自动版式与暖白、松绿、黛蓝、朱砂、青莲、极简六套主题（当前选中暖白）；发布前读数显示字数 356 字、约 1 分钟、无封面；下面一排复制标题、复制摘要、存草稿、存贴图与复制正文按钮；纸面是「把 VS Code 写成公众号排版台」的暖白主题预览，作者 MD Toolkit">
+    </figure>
+  </div>
+</section>
+
+<section id="templates">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Template Library</div>
+      <h2>十套成品画板，套上就能改</h2>
+      <p>会议纪要、流程、组织架构、里程碑、产品排期、鱼骨复盘、交付泳道、跨部门流程、平台应用架构，到 UML 时序图——新建时直接选，已有画板从左侧「模板库」整套替换，一步撤销。</p>
+    </div>
+    <div class="tpl-grid">
+      <figure class="tpl-card tpl-wide reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-arch.png" width="2000" height="1250" loading="lazy"
+               alt="平台应用架构图模板：业务、用户、数据三个平台分色排列，平台内用虚线分出商品、交易、会员、营销、数据产品，每个产品下是应用卡片和模块条">
+        </div>
+        <figcaption><b>平台应用架构图</b><span>平台 · 产品 · 应用 · 模块四层</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-mm.png" width="2000" height="1250" loading="lazy"
+               alt="会议纪要导图模板：中心主题「产品周会」向右侧展开本周进展、问题与风险、待办与负责人、下次会议四支，末级节点落到具体事项">
+        </div>
+        <figcaption><b>会议纪要导图</b><span>四支议题，待办落到人</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-flow.png" width="2000" height="1250" loading="lazy"
+               alt="登录注册流程模板：进入登录页后按是否已有账号分岔，注册后回到输入账号密码，校验失败给出提示并重新输入，成功进入首页">
+        </div>
+        <figcaption><b>登录注册流程</b><span>注册与错误两条回环</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-org.png" width="2000" height="1250" loading="lazy"
+               alt="公司组织架构模板：总经理下分产品、技术、市场、运营、职能五个中心，各带下属部门的分组连线">
+        </div>
+        <figcaption><b>公司组织架构</b><span>三级部门，org 布局</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-time.png" width="2000" height="1250" loading="lazy"
+               alt="项目里程碑模板：一条时间轴串起十个带日期的节点，从 10-08 立项评审到 11-19 全量上线，上下交错排列">
+        </div>
+        <figcaption><b>项目里程碑</b><span>六个带日期的节点</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-fish.png" width="2000" height="1250" loading="lazy"
+               alt="上线复盘鱼骨图模板：鱼头是「上线延期」，人机料法环五根大骨各挂两条原因">
+        </div>
+        <figcaption><b>上线复盘鱼骨图</b><span>人机料法环五根大骨</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-lane.png" width="2000" height="1250" loading="lazy"
+               alt="跨职能交付泳道模板：产品、研发、测试、运维四个角色横跨需求、开发、发布三个阶段，节点按移交顺序串联">
+        </div>
+        <figcaption><b>跨职能交付泳道</b><span>四角色 × 三阶段流转</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-road.png" width="2000" height="1250" loading="lazy"
+               alt="产品里程碑模板：顶部 12 个月刻度，需求调研、方案设计、研发落地三行排期条分色排列，Kickoff、内部测试、正式发布三面旗标在对应月份">
+        </div>
+        <figcaption><b>产品里程碑</b><span>12 个月排期，三个发布节点</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-dept.png" width="2000" height="1250" loading="lazy"
+               alt="跨部门流程图模板：左侧市场、销售、法务财务、交付四色部门栏，线索进入经商机确认、合同评审、回款确认到交付验收，合同驳回用虚线回到补充材料">
+        </div>
+        <figcaption><b>跨部门流程图</b><span>四部门交接与驳回回环</span></figcaption>
+      </figure>
+      <figure class="tpl-card reveal">
+        <div class="tpl-thumb">
+          <img src="assets/tpl-seq.png" width="2000" height="1250" loading="lazy"
+               alt="UML 时序图模板：用户、前端、订单服务、支付服务、库存服务五条生命线，实线箭头表示请求、虚线箭头表示回包，演示下单支付流程">
+        </div>
+        <figcaption><b>UML 时序图</b><span>五条生命线，请求与回包</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="compare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Why Not Just…</div>
+      <h2>为什么不用现成的插件</h2>
+      <p>VS Code 的 Markdown 插件已经很多了。这三条追问，是这个扩展存在的理由。</p>
+    </div>
+    <div class="qa">
+      <div class="qa-item reveal">
+        <span class="q">01</span>
+        <div>
+          <h3>多装几个现成插件，不行吗？</h3>
+          <p class="qa-body">常见做法是预览增强加一个、快捷键加一个、画图加一个、导出加一个，<b>一串扩展拼成一个能用的编辑器</b>。可每个插件都只改自己那视图：同一段文字，编辑器里敲的键、预览里看到的效果、导出时选的版式，出自三套互不相干的实现，行为对不齐、快捷键撞车是常态——<b>拼起来仍是一张缝合桌面</b>。</p>
+        </div>
+      </div>
+      <div class="qa-item reveal">
+        <span class="q">02</span>
+        <div>
+          <h3>直接上所见即所得，不就完了？</h3>
+          <p class="qa-body">前提别搞反：<b>文件还是标准 .md</b>。存不进 .md 的编辑，等于把一个钉子户请进仓库——git diff 读不出、别人打开不了、想换工具换不走。MD Toolkit 的取舍是编辑态做足手感，落笔仍然逐字存成 Markdown，切回源码视图就该是什么是什么。</p>
+        </div>
+      </div>
+      <div class="qa-item reveal">
+        <span class="q">03</span>
+        <div>
+          <h3>这些需求，上游什么时候补？</h3>
+          <p class="qa-body">画板、带书签树的 A4 PDF、粘贴截图自动存图、中文输入法组合期避让、复制进 Word 保留层级——每一条单拎出来都是几周工程量，任何一款现成插件都没有理由为<b>别人家的那份文档</b>去做。它们不是缺一个 PR 的小缺口，是几套互不相让的实现，塞不进同一个扩展。</p>
+        </div>
+      </div>
+    </div>
+    <p class="qa-close reveal">自研，是为了把<b>一整条链握在同一只手里</b>：编辑手感、渲染、存盘、画板、导出、剪贴板，一次改完全链都跟着对齐。
+      <span style="display:block;margin-top:6px">于是你拿到的是这些——</span>
+    </p>
+    <ul class="qa-list reveal">
+      <li><b>自研画板</b>：流程图 / 思维导图直接画在 .md 里</li>
+      <li><b>所见即所得</b>：编辑完存下的还是标准 Markdown</li>
+      <li><b>复制跟预览一个样</b>：进 Word / 飞书 / 语雀仍是原生列表</li>
+      <li><b>带书签树 PDF</b>：长文档导出可翻阅</li>
+      <li><b>单文件网页</b>：正文带目录导出，浏览器直接打开</li>
+      <li><b>长图导出</b>：整篇一张或按内容切成多张</li>
+      <li><b>网页导入</b>：贴个网址，整篇存成能改的 .md</li>
+      <li><b>公众号排版</b>：六套主题、复制正文或存进草稿箱</li>
+      <li><b>画板出图</b>：整板存 PNG、矢量 PDF 或复制 SVG</li>
+      <li><b>中文场景优先</b>：输入法不打断、按字统计</li>
+      <li><b>全本地离线</b>：不上传内容、不依赖外部服务</li>
+    </ul>
+  </div>
+</section>
+
+<section id="more">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">And much more</div>
+      <h2>30+ 处细节，都在手感上</h2>
+    </div>
+    <div class="chips reveal">
+      <div class="chip"><b>粘贴截图自动存图</b><span>存入 image/ 目录，文档只写相对路径</span></div>
+      <div class="chip"><b>粘贴 Markdown 直接成块</b><span>粘源码变标题/列表/表格</span></div>
+      <div class="chip"><b>Excel / 网页表格粘贴成表</b><span>TSV 一贴即成 Markdown 表格</span></div>
+      <div class="chip"><b>选区浮动工具条</b><span>加粗 / 斜体 / 高亮 / 链接一键完成</span></div>
+      <div class="chip"><b>标题折叠</b><span>悬停点 ▾ 收起整节，目录跳转自动展开</span></div>
+      <div class="chip"><b>图片灯箱</b><span>滚轮缩放、拖拽平移、多图翻页</span></div>
+      <div class="chip"><b>成对符号自动补全</b><span>敲 ( [ $ * 自动闭合，单词中间不误伤</span></div>
+      <div class="chip"><b>行内排版</b><span>==高亮==、^上标^、~下标~</span></div>
+      <div class="chip"><b>脚注</b><span>引用处上标，定义随文可编辑，导出带角标</span></div>
+      <div class="chip"><b>列表自动续行</b><span>Tab 升降级、空项回车跳出</span></div>
+      <div class="chip"><b>查找 / 替换</b><span>命中高亮跳转、全部替换一步可撤销</span></div>
+      <div class="chip"><b>代码块语法着色 + 一键复制</b><span>离线内置，17 种语言切换</span></div>
+      <div class="chip"><b>字数统计与阅读时长</b><span>中文按字、英文按词，常驻左下角</span></div>
+      <div class="chip"><b>文档目录</b><span>左侧自动生成，点击跳转</span></div>
+      <div class="chip"><b>笔记互链点击即打开</b><span>另一篇文档在编辑器里打开，指到小标题就落在那一行</span></div>
+      <div class="chip"><b>撤销 / 重做全覆盖</b><span>块级操作均可一步回退</span></div>
+      <div class="chip"><b>中文输入法让位</b><span>组合期快捷键自动避让，不打断输入</span></div>
+      <div class="chip"><b>格式化文档 / 生成目录</b><span>命令面板搜索 MD Toolkit</span></div>
+      <div class="chip"><b>画板 12 档导图结构</b><span>横向 / 纵向 / 镜像 / 组织结构图 / 时间轴 / 径向 / 鱼骨图</span></div>
+      <div class="chip"><b>画板模板库</b><span>会议纪要 / 流程 / 组织架构 / 里程碑 / 产品排期 / 鱼骨 / 泳道 / 跨部门 / 平台架构 / 时序图，一键换整板</span></div>
+      <div class="chip"><b>小节与导图双向转换</b><span>标题加列表一键长成画板，导图可导出大纲</span></div>
+      <div class="chip"><b>画板样式刷与超链接</b><span>样式粘贴到其他选区，元素挂链接 Ctrl+点击打开</span></div>
+      <div class="chip"><b>画板一键出图</b><span>整板存成 PNG 或矢量 PDF，也能复制 SVG 贴到别处</span></div>
+      <div class="chip"><b>画板图形旋转</b><span>图形按任意角度转，连线和选中框跟着走</span></div>
+      <div class="chip"><b>画板全文搜索</b><span>Ctrl+F 找字，命中处高亮，回车跳到下一处</span></div>
+      <div class="chip"><b>块箭头五种朝向</b><span>左、右、上、下、双向随手换</span></div>
+      <div class="chip"><b>竖向与网格泳道</b><span>头格还能换到另一边</span></div>
+      <div class="chip"><b>表格列对齐</b><span>左中右一键设置</span></div>
+      <div class="chip"><b>正文版心两档</b><span>居中窄栏读，或整栏页宽铺开</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="updates">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Changelog</div>
+      <h2>更新日志</h2>
+      <p>最近三版如下，完整记录在更新日志页。</p>
+    </div>
+    <!-- upd:begin 由 scripts/sync-site-updates.js 从 CHANGELOG.md 生成,别手改 -->
+    <ul class="upd reveal">
+      <li><span class="v">0.4.3</span><div><b>打字、拖拽、连线这些日常动作跟手了。</b><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>双击图形改一个词，不再整句被选中重打</li><li>拖导图节点时，被拖的那枝跟着手走</li><li>方向键连按后重做，回到挪完的位置</li><li>笔刷锁定连续勾画，收笔不再跳回选择</li><li>按住 Ctrl 只点一下不再多出隐藏副本，拖动才复制</li><li>连线落回起点或太短，起点闪一下红环，不再无声</li><li>查找与替换不再每敲一个字就跳页面，跑偏的命中也会露出来</li><li>块手柄随滚动走，滚出视野或指针离开正文后照常收起</li><li>输入框不再吞掉中文候选词</li></ul></div><div class="upd-group"><span class="upd-tag misc">优化</span><ul class="upd-items"><li>快捷键速查卡补上方向键微调、Ctrl 拖动副本、Shift 加选与导图建树键</li></ul></div></div></li>
+      <li><span class="v">0.4.2</span><div><b>画板手势实时呈现，进行中的操作可以随时取消。</b><div class="upd-group"><span class="upd-tag add">新增</span><ul class="upd-items"><li>拖动、缩放、旋转时元素跟着指针走，连着它的线同步改道</li><li>缩放时显示当前尺寸</li><li>连线预览与最终连线走同一条路径</li><li>框选扫过的元素实时高亮</li><li>多选后可整体缩放</li><li>按住 Ctrl 拖动元素可复制一份</li><li>画板可缩到 10%，也可放到 800%</li></ul></div><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>拖动、缩放、旋转、框选、拉线都能按 Esc 取消</li><li>Shift 框选改为切换选中状态</li><li>按住 Shift 的方向键按网格间距移动</li><li>从工具条拖出元素或手绘到画布边缘时，画布自动滚动</li></ul></div></div></li>
+      <li><span class="v">0.4.1</span><div><b>修掉正文输入与画板上的几处问题。</b><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>空文档第一行的标题、列表、引用、成对符号和块手柄都能用了</li><li>长文字的连线说明不再被选框和导出画面裁掉</li><li>旋转后的图形也能接住拖过来的连线</li><li>换模板整板时不再沿用上一块板的网格与吸附设置</li><li>磁盘上的外部改动与本地保存撞车时不再被静默覆盖</li></ul></div></div></li>
+    </ul>
+    <!-- upd:end -->
+    <p class="upd-more reveal"><a href="changelog.html">查看全部更新日志 →</a></p>
+  </div>
+</section>
+
+<section id="install" class="install">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:36px">
+      <div class="kicker">Get Started</div>
+      <h2>三分钟上手</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><i>01</i><h4>安装扩展</h4><p>在 VS Code 扩展面板搜索 <b>MD Toolkit</b>，或直接打开 <a href="https://marketplace.visualstudio.com/items?itemName=gmsy.md-toolkit" target="_blank" rel="noopener" style="color:var(--accent)">Marketplace 页面</a>点 Install，也可用下方命令。</p></div>
+      <div class="step"><i>02</i><h4>打开任意 .md</h4><p>点编辑器右上角按钮，以<b>所见即所得</b>模式打开现有文档。</p></div>
+      <div class="step"><i>03</i><h4>敲一个 /</h4><p>唤出斜杠菜单，从 <b>24 种块</b>开始，包括 /画板。</p></div>
+    </div>
+    <div class="cmd-copy reveal">
+      <code id="cmdline">code --install-extension gmsy.md-toolkit</code>
+      <button type="button" id="copyBtn" aria-label="复制安装命令">复制</button>
+    </div>
+    <div class="reveal" style="margin-bottom:26px">
+      <a class="btn btn-ghost" href="https://marketplace.visualstudio.com/items?itemName=gmsy.md-toolkit" target="_blank" rel="noopener">打开 Marketplace 页面 ↗</a>
+    </div>
+    <p class="reveal" style="color:var(--muted);font-size:13.5px">免费使用 · 数据全在本地 · 支持 Windows / macOS / Linux</p>
+    <p class="reveal" style="color:var(--muted);font-size:13.5px">项目在持续更新，遇到 bug 或有想要的能力，欢迎到 <a href="https://gitee.com/selfeasy/vscode-md-toolkit/issues" target="_blank" rel="noopener" style="color:var(--accent)">问题反馈</a> 提 issue。</p>
+  </div>
+</section>
+
+<section id="reward" class="reward">
+  <div class="wrap reward-grid">
+    <div class="reveal">
+      <div class="kicker" style="font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase">Support</div>
+      <h2>如果它帮你省下了排版时间</h2>
+      <p>MD Toolkit 是个人项目，免费使用、不接广告、不上传任何数据。如果它让你的文档写得顺一点，欢迎扫个码请作者喝杯咖啡——这是把这个项目继续做下去最直接的鼓励。</p>
+      <p>新主题、排版技巧与更新说明首发于公众号「顾明同学」，功能需求与反馈也欢迎到那里提。</p>
+    </div>
+    <div class="qr-pair reveal">
+      <figure class="qr-card">
+        <img src="assets/wechat.jpg" alt="公众号「顾明同学」二维码" width="224" height="224">
+        <figcaption>公众号 · 顾明同学</figcaption>
+      </figure>
+      <figure class="qr-card">
+        <img src="assets/reward.png" alt="微信赞赏码，扫码支持 MD Toolkit" width="224" height="224">
+        <figcaption>微信扫一扫 · 赞赏</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 MD Toolkit · gmsy</span>
+    <div class="links">
+      <a href="https://marketplace.visualstudio.com/items?itemName=gmsy.md-toolkit" target="_blank" rel="noopener">VS Code Marketplace</a>
+      <a href="https://gitee.com/selfeasy/vscode-md-toolkit/issues" target="_blank" rel="noopener">问题反馈</a>
+      <a href="#reward">赞赏支持</a>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }, { threshold: 0, rootMargin: '0px 0px -8%' });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+const tabs = [...document.querySelectorAll('.editor .tabs button')];
+const views = [...document.querySelectorAll('.editor .view')];
+for (const t of tabs) t.addEventListener('click', () => {
+  for (const b of tabs) b.setAttribute('aria-pressed', String(b === t));
+  for (const v of views) v.classList.toggle('on', v.dataset.view === t.dataset.view);
+});
+
+document.getElementById('copyBtn').addEventListener('click', async (ev) => {
+  const btn = ev.currentTarget;
+  try {
+    await navigator.clipboard.writeText(document.getElementById('cmdline').textContent.trim());
+    btn.textContent = '已复制 ✓';
+  } catch {
+    btn.textContent = '复制失败';
+  }
+  setTimeout(() => btn.textContent = '复制', 1600);
+});
+</script>
+<script src="marketplace.js"></script>
+</body>
+</html>

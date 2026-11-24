@@ -208,6 +208,7 @@ footer { border-top: 1px solid var(--line); padding: 34px 0 44px; font-size: 13.
 .foot .links { margin-left: auto; display: flex; gap: 12px 20px; flex-wrap: wrap; }
 .foot a { white-space: nowrap; }
 .foot a:hover { color: var(--text); }
+.foot .visits { white-space: nowrap; }
 
 /* 实图 */
 .shots-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }

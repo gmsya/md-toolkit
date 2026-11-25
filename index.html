@@ -8,7 +8,16 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Crect y='7.25' width='32' height='24.75'/%3E%3C/clipPath%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%230969DA'/%3E%3Cg clip-path='url(%23c)'%3E%3Cpath d='M7.75 24 V7.25 L16 15.75 L24.25 7.25 V24' fill='none' stroke='%23000' stroke-width='3.25'/%3E%3C/g%3E%3Ccircle cx='16' cy='15.75' r='2.875' fill='%237ee2b8'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
-<script defer src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bc09b01593b73b414b39cb6e1b3c8c41";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </head>
 <body>
 
@@ -406,7 +415,7 @@
     </div>
     <!-- upd:begin 由 scripts/sync-site-updates.js 从 CHANGELOG.md 生成,别手改 -->
     <ul class="upd reveal">
-      <li><span class="v">0.5.0</span><div><b>把一个 Markdown 文件夹变成可浏览、可搜索、可换主题的静态站点。</b><div class="upd-group"><span class="upd-tag add">新增</span><ul class="upd-items"><li>文件夹一键生成静态站点：递归扫描 Markdown，自动生成导航树、每页目录与客户端搜索，公式和图表沿用编辑器渲染</li><li>文件夹右键直接生成；命令面板运行时弹出文件夹选择，取消不报错</li><li>四套主题（暖白、冷白、暗、护眼绿）与切换器，默认跟随系统明暗，手动选择记忆</li><li>文档站三栏排布：左导航当前页高亮，右置本页目录随滚动高亮、不截断，正文放宽</li><li>搜索支持多词顺序不限与不连续字符的模糊匹配</li><li>命令 md-toolkit.buildSite 支持 source/destination/overwrite，可脚本化指定输入输出；默认生成到源目录的 _site</li></ul></div><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>修复双击直开（file://）时搜索无反应的问题</li><li>修复子页搜索结果链接指向错误目录的问题</li></ul></div></div></li>
+      <li><span class="v">0.5.0</span><div><b>把一个 Markdown 文件夹变成可浏览、可搜索、可换主题的静态站点。</b><div class="upd-group"><span class="upd-tag add">新增</span><ul class="upd-items"><li>文件夹一键生成静态站点：递归扫描 Markdown，自动生成导航树、每页目录与客户端搜索，公式和图表沿用编辑器渲染</li><li>文件夹右键直接生成；命令面板运行时弹出文件夹选择；目录已存在时弹覆盖确认</li><li>没有 index.md 时自动生成可点击首页；首页居中聚焦、搜索居中</li><li>四套主题（暖白、冷白、暗、护眼绿）自定义下拉切换，默认跟随系统明暗，手动选择记忆</li><li>文档站三栏排布：左导航当前页高亮，右置本页目录随滚动高亮、不截断，正文放宽</li><li>搜索：标题与正文都搜，分词顺序不限、不连续字符模糊匹配，片段标命中词、点击跳到命中文字高亮；↑/↓ 选、Enter 打开、Esc 收起，Ctrl+K 或 / 聚焦，无匹配提示，标题命中优先</li><li>阅读流：上一篇/下一篇、标题悬停锚点复制链接、返回顶部、代码块一键复制、外链新窗打开带 noopener</li><li>命令 md-toolkit.buildSite 支持 source/destination/overwrite，可脚本化指定输入输出；默认生成到源目录的 _site</li></ul></div><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>修复双击直开（file://）时搜索无反应的问题</li><li>修复子页搜索结果链接指向错误目录的问题</li><li>重新生成自动清理孤儿页，不拷贝隐藏文件（.env 等）</li><li>代码示例里的 href 不再被站内链接改写误伤</li><li>mermaid 跟随主题配色，暗色不再浅底</li></ul></div></div></li>
       <li><span class="v">0.4.6</span><div><b>本轮修复五处问题，并把打字机开关移到状态栏。</b><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>修复打开外部文档时其中的脚本可能被执行的安全问题</li><li>修复图片和链接地址在格式化或保存后被改写的问题</li><li>修复用 Windows 换行格式的画板文件保存后反复整板重载的问题</li><li>修复部分文档的 frontmatter 在编辑后多出空行的问题</li><li>修复画板折叠组导出时丢失成员和连线的问题</li></ul></div><div class="upd-group"><span class="upd-tag misc">优化</span><ul class="upd-items"><li>打字机开关移到状态栏，只在编辑时出现</li></ul></div></div></li>
       <li><span class="v">0.4.5</span><div><b>画板这轮补齐了上手引导、文字编辑、分支标签与视口记忆。</b><div class="upd-group"><span class="upd-tag add">新增</span><ul class="upd-items"><li>便签与自由文字改为 Enter 换行，Ctrl/Cmd+Enter 完成</li><li>编辑框随内容增高，下方显示换行、完成与取消提示</li><li>判断框出线后可直接选是、否或自定义标签，已有一条时默认另一半</li><li>形状面板显示最近使用与悬停名称</li><li>空板时形状钮带高亮引导</li><li>画板按文件记住上次视口，重新打开回到原位</li><li>大板在小窗首次打开保持可读缩放，矮窗工具条分两列显示全部工具</li></ul></div><div class="upd-group"><span class="upd-tag fix">修复</span><ul class="upd-items"><li>修复缩略导航点按或拖动时画布往反方向跳的问题</li><li>修复缩略导航全览时当前位置框显示不全的问题</li><li>修复判断框手标一条是/否后，另一条丢失自动标签的问题</li><li>修复矮窗口首次打开时内容可能被工具条挤出视口的问题</li></ul></div></div></li>
     </ul>
@@ -464,7 +473,6 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 MD Toolkit · gmsy</span>
-    <span class="visits">本站总访问 <span id="busuanzi_site_pv">–</span> 次 · 访客 <span id="busuanzi_site_uv">–</span> 人</span>
     <div class="links">
       <a href="https://marketplace.visualstudio.com/items?itemName=gmsy.md-toolkit" target="_blank" rel="noopener">VS Code Marketplace</a>
       <a href="https://github.com/gmsya/md-toolkit/issues" target="_blank" rel="noopener">问题反馈</a>
